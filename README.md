@@ -204,4 +204,4 @@ This project also helped me practice building a full-stack web app using Flask, 
 
 ## Author
 
-Created by [Your Name].
+Created by Maryam Abbasi
