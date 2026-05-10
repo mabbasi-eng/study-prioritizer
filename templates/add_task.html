@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Task</title>
+
+    <!-- Connect this page to the CSS file -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- Page title -->
+        <h1>Add a New Task</h1>
+
+        <!-- Link back to the homepage -->
+        <a class="back-link" href="{{ url_for('index') }}">← Back to Dashboard</a>
+
+        <!-- 
+            This form sends data to the same /add route.
+            method="POST" means it is submitting data.
+        -->
+        <form method="POST" class="task-form">
+
+            <!-- Task title -->
+            <label for="title">Task Title</label>
+            <input type="text" id="title" name="title" placeholder="Example: Finish math homework" required>
+
+            <!-- Task type -->
+            <label for="task_type">Task Type</label>
+            <select id="task_type" name="task_type" required>
+                <option value="">Choose a type</option>
+                <option value="Assignment">Assignment</option>
+                <option value="Test">Test</option>
+                <option value="Lab">Lab</option>
+                <option value="Quiz">Quiz</option>
+                <option value="Project">Project</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <!-- Course name -->
+            <label for="course">Course</label>
+            <input type="text" id="course" name="course" placeholder="Example: Biology" required>
+
+            <!-- Due date -->
+            <label for="due_date">Due Date</label>
+            <input type="date" id="due_date" name="due_date" required>
+
+            <!-- Estimated hours -->
+            <label for="estimated_hrs">Estimated Hours Needed</label>
+            <input type="number" id="estimated_hrs" name="estimated_hrs" min="0" step="0.5" placeholder="Example: 2.5" required>
+
+            <!-- Difficulty -->
+            <label for="difficulty">Difficulty 1-5</label>
+            <input type="number" id="difficulty" name="difficulty" min="1" max="5" placeholder="1 = easy, 5 = hard" required>
+
+            <!-- Importance -->
+            <label for="importance">Importance 1-5</label>
+            <input type="number" id="importance" name="importance" min="1" max="5" placeholder="1 = low, 5 = high" required>
+
+            <!-- Completion percentage -->
+            <label for="completion">Completion Percentage</label>
+            <input type="number" id="completion" name="completion" min="0" max="100" value="0" required>
+
+            <!-- Submit button -->
+            <button type="submit" class="submit-button">Add Task</button>
+        </form>
+    </div>
+</body>
+</html>

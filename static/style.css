@@ -1,0 +1,149 @@
+/* Applies to the whole page */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f8;
+    margin: 0;
+    padding: 0;
+    color: #222;
+}
+
+/* Centers the main content */
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 40px auto;
+    background-color: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Main page title */
+h1 {
+    margin-bottom: 5px;
+    color: #2c3e50;
+}
+
+/* Small text under title */
+.subtitle {
+    color: #666;
+    margin-bottom: 25px;
+}
+
+/* Add task button */
+.add-button {
+    display: inline-block;
+    background-color: #2d89ef;
+    color: white;
+    padding: 10px 14px;
+    border-radius: 8px;
+    text-decoration: none;
+    margin-bottom: 20px;
+}
+
+/* Button hover effect */
+.add-button:hover {
+    background-color: #1b65b9;
+}
+
+/* Back link on add task page */
+.back-link {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: #2d89ef;
+    text-decoration: none;
+}
+
+/* Table styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+/* Table cells */
+th,
+td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+
+/* Table header */
+th {
+    background-color: #eef3f8;
+    color: #333;
+}
+
+/* Highlight priority score */
+.priority {
+    font-weight: bold;
+    color: #d35400;
+}
+
+/* Message when there are no tasks */
+.empty-message {
+    color: #777;
+    font-style: italic;
+}
+
+/* Allows complete/delete forms to sit nicely */
+.inline-form {
+    display: inline-block;
+    margin: 2px;
+}
+
+/* General button style */
+button {
+    border: none;
+    padding: 8px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* Complete button */
+.complete-button {
+    background-color: #27ae60;
+    color: white;
+}
+
+/* Delete button */
+.delete-button {
+    background-color: #e74c3c;
+    color: white;
+}
+
+/* Form layout */
+.task-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+}
+
+/* Labels above inputs */
+.task-form label {
+    margin-top: 12px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* Input and dropdown styling */
+.task-form input,
+.task-form select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+/* Add task submit button */
+.submit-button {
+    margin-top: 20px;
+    background-color: #2d89ef;
+    color: white;
+    font-size: 16px;
+}
+
+/* Hover effect for submit button */
+.submit-button:hover {
+    background-color: #1b65b9;
+}

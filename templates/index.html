@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>StudyPrioritizer</title>
+
+    <!-- Connect this HTML file to your CSS file -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <!-- Main container for the page -->
+    <div class="container">
+
+        <!-- Website title -->
+        <h1>StudyPrioritizer</h1>
+
+        <!-- Small description -->
+        <p class="subtitle">Organize your school tasks by priority.</p>
+
+        <!-- Button/link to go to the add task page -->
+        <a class="add-button" href="{{ url_for('add') }}">+ Add New Task</a>
+
+        <!-- Section title -->
+        <h2>Your Tasks</h2>
+
+        <!-- This checks if there are any tasks in the database -->
+        {% if tasks %}
+
+            <!-- Table that displays all tasks -->
+            <table>
+                <thead>
+                    <tr>
+                        <th>Task</th>
+                        <th>Type</th>
+                        <th>Course</th>
+                        <th>Due Date</th>
+                        <th>Hours</th>
+                        <th>Difficulty</th>
+                        <th>Importance</th>
+                        <th>Done</th>
+                        <th>Priority</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <!-- Loop through every task sent from app.py -->
+                    {% for task in tasks %}
+                    <tr>
+                        <!-- Display each task's information -->
+                        <td>{{ task.title }}</td>
+                        <td>{{ task.task_type }}</td>
+                        <td>{{ task.course }}</td>
+                        <td>{{ task.due_date }}</td>
+                        <td>{{ task.estimated_hrs }}</td>
+                        <td>{{ task.difficulty }}</td>
+                        <td>{{ task.importance }}</td>
+                        <td>{{ task.completion }}%</td>
+                        <td class="priority">{{ task.priority_score }}</td>
+
+                        <td>
+                            <!-- Form button to mark task complete -->
+                            <form action="{{ url_for('complete', task_id=task.id) }}" method="POST" class="inline-form">
+                                <button type="submit" class="complete-button">Complete</button>
+                            </form>
+
+                            <!-- Form button to delete task -->
+                            <form action="{{ url_for('delete', task_id=task.id) }}" method="POST" class="inline-form">
+                                <button type="submit" class="delete-button">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+        {% else %}
+
+            <!-- This shows if there are no tasks yet -->
+            <p class="empty-message">No tasks yet. Add your first task!</p>
+
+        {% endif %}
+    </div>
+</body>
+</html>
